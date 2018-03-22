@@ -784,6 +784,8 @@ module Calabash module Android
           log ("Could not kill app. Waited to 3 seconds.")
         rescue EOFError
           log ("Could not kill app. App is most likely not running anymore.")
+        rescue StandardError
+          log ("An unknown error occurred")
         end
       end
 
