@@ -746,7 +746,11 @@ module Calabash module Android
 
         block.call if block
 
-        start_application(options[:intent])
+        if options[:skip_app_start]
+          log("Skipping application start")
+        else
+          start_application(options[:intent])
+        end
 
         # What is Calabash tracking? Read this post for information
         # No private data (like ip addresses) are collected
