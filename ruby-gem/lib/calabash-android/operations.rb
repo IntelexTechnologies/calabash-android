@@ -775,6 +775,7 @@ module Calabash module Android
       def shutdown_test_server
         begin
           unless @adb_shell_pid.nil?
+            Process.detach(@adb_shell_pid)
             Process.kill("HUP",@adb_shell_pid)
             @adb_shell_pid = nil
           end
