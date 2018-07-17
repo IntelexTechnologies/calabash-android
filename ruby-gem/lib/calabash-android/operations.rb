@@ -683,7 +683,9 @@ module Calabash module Android
         if options[:with_uiautomator]
           cmd_arr.insert(2, "-w")
           shutdown_test_server
-          @adb_shell_pid = Process.spawn(cmd_arr.join(" "), :in => '/dev/null') rescue "Could not execute command to start test server with uiautomator"
+          stdin_null = RUBY_PLATFORM.include?('mingw') ? 'NUL' : '/dev/null'
+          log "Starting test server with UIAutomator support, stdin #{stdin_null}"
+          @adb_shell_pid = Process.spawn(cmd_arr.join(" "), :in => stdin_null) rescue "Could not execute command to start test server with uiautomator"
         else
           cmd = cmd_arr.join(" ")
 
