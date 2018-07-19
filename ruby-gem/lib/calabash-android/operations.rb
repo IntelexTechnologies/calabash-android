@@ -778,7 +778,8 @@ module Calabash module Android
         begin
           unless @adb_shell_pid.nil?
             Process.detach(@adb_shell_pid)
-            Process.kill("HUP",@adb_shell_pid)
+            signal_name = RUBY_PLATFORM.include?('mingw') ? 'KILL' : 'HUP'
+            Process.kill(signal_name, @adb_shell_pid)
             @adb_shell_pid = nil
           end
           http("/kill")
