@@ -1,5 +1,8 @@
 Welcome to Calabash for Android
 ===========================
+[![Build Status](https://secure.travis-ci.org/calabash/calabash-android.png?branch=master)](http://travis-ci.org/calabash/calabash-android)
+
+>After delivering support for the final releases of iOS 11 and Android 8 operating systems, Microsoft will discontinue our contributions to developing Calabash, the open-source mobile app testing tool. We hope that the community will continue to fully adopt and maintain it. As part of our transition on the development of Calabash, we've provided an overview of mobile app UI and end-to-end testing frameworks as a starting point for teams who are looking to re-evaluate their testing strategy. Please see our [Mobile App Testing Frameworks Overview](https://docs.microsoft.com/en-us/appcenter/migration/test-cloud/frameworks) document.
 
 Calabash is an automated testing technology for Android and iOS native and hybrid applications.
 This repository contains support for Android, for iOS, see [Calabash Landing Page](http://calaba.sh/).
@@ -24,14 +27,7 @@ Calabash Android requires ruby >= 2.0 (latest stable release is preferred).
 #### Ruby on MacOS
 
 On MacOS, we recommend using a managed Ruby like
-[rbenv](https://github.com/sstephenson/rbenv) or [rvm](https://rvm.io/)).  If
-you are just getting started or don't want to commit to a managed Ruby, you
-should install and use the [Calabash Sandbox](https://github.com/calabash/install).
-
-```
-# Installs the Calabash Sandbox
-$ curl -sSL https://raw.githubusercontent.com/calabash/install/master/install-osx.sh | bash
-```
+[rbenv](https://github.com/sstephenson/rbenv) or [rvm](https://rvm.io/)).
 
 Please do **not** install gems with `sudo`
 
